@@ -1,0 +1,32 @@
+@use "./base/reset";
+@use "./base/variables" as *;
+@use "./base/fonts" as *;
+
+body {
+  background-color: $dark-green;
+}
+
+.logo {
+  position: absolute;
+  font-family: "Berlin Sans FB";
+  font-size: 60px;
+  color: $light-gray;
+  span:nth-child(1) {
+    color: $pink;
+  }
+  span:nth-child(2) {
+    color: $light-green;
+  }
+
+  &:before {
+    position: relative;
+    top: 15px;
+    background-image: url(/css/images/logo.png);
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 75px;
+    height: 70px;
+    content: "";
+  }
+}
