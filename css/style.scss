@@ -2,14 +2,49 @@
 @use "./base/variables" as *;
 @use "./base/fonts" as *;
 
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
 body {
   background-color: $dark-green;
 }
 
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 50px);
+  width: 70%;
+}
+
+.top {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .logo {
+  a {
+    text-decoration: none;
+    color: $light-gray;
+  }
   font-family: "Berlin Sans FB";
   font-size: 60px;
-  color: $light-gray;
+
   span:nth-child(1) {
     color: $pink;
   }
@@ -27,5 +62,197 @@ body {
     width: 75px;
     height: 70px;
     content: "";
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: "Berlin Sans FB";
+  font-size: 18px;
+
+  a {
+    color: $light-gray;
+    text-decoration: none;
+    padding-bottom: 20px;
+    &:hover {
+      color: $light-green;
+    }
+  }
+  ul {
+    display: flex;
+    li {
+      padding-left: 30px;
+      padding-right: 25px;
+    }
+  }
+
+  .form {
+    position: relative;
+
+    &__search {
+      border: none;
+
+      background-color: $darker-green;
+      border-radius: 7px 0px 0px 7px;
+      height: 35px;
+      width: 100%;
+      padding-left: 30px;
+      padding-right: 60px;
+      font-family: "Berlin Sans FB";
+      font-size: 18px;
+      outline: none;
+      color: white;
+    }
+    &__spin {
+      position: absolute;
+      right: -10px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      height: 35px;
+      width: 35px;
+      border: none;
+      font-family: "Berlin Sans FB";
+      color: white;
+      background-color: $pink;
+      cursor: pointer;
+      transform: rotate(-20deg);
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+.middle {
+  font-family: "Berlin Sans FB";
+  color: $light-gray;
+
+  .tiles {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    .tile {
+      flex: 1 1 300px;
+      align-self: flex-start;
+      padding: 30px;
+      cursor: pointer;
+      background-color: $darker-green;
+      border-radius: 15px;
+
+      &:hover {
+        background-color: $light-blue;
+      }
+
+      .lpholder {
+        .imgholder {
+          margin-bottom: 20px;
+          z-index: 1;
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+      p {
+        font-size: 20px;
+        text-align: center;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+.genre_links {
+  font-family: "Berlin Sans FB";
+  font-size: 14px;
+  color: $light-gray;
+  margin-bottom: 50px;
+  width: 85%;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    li {
+      padding: 10px 20px 10px 20px;
+      border: 1px solid $light-gray;
+      border-radius: 10px;
+      cursor: pointer;
+      &:hover {
+        color: $light-green;
+        border-color: $light-green;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $pink;
+  height: 50px;
+  width: 100%;
+  position: relative;
+
+  .container {
+    font-family: "Berlin Sans FB";
+    font-size: 11px;
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 70%;
+    padding-top: 20px;
+  }
+
+  .elements {
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+
+    .circle {
+      width: 170px;
+      height: 170px;
+      background-image: url(/css/images/lp_element.png);
+      background-size: 170px 170px;
+      background-repeat: no-repeat;
+    }
+    .circle2 {
+      position: absolute;
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      background-color: $darker-green;
+      bottom: -20px;
+      left: -100px;
+      z-index: -2;
+    }
+    .block {
+      position: absolute;
+      width: 90px;
+      height: 10px;
+      background-color: $light-blue;
+      bottom: 40px;
+      left: -130px;
+    }
+    .block1 {
+      position: absolute;
+      width: 90px;
+      height: 10px;
+      background-color: $light-blue;
+      bottom: 60px;
+      left: -150px;
+    }
+    .block2 {
+      position: absolute;
+      width: 90px;
+      height: 10px;
+      background-color: $light-blue;
+      bottom: 80px;
+      left: -130px;
+    }
   }
 }

@@ -139,18 +139,53 @@ table {
 
 @font-face {
   font-family: "Berlin Sans FB";
-  src: url("./fonts/BerlinSansFB-Reg.woff2") format("woff2"), url("./fonts/BerlinSansFB-Reg.woff") format("woff");
+  src: url("/fonts/BerlinSansFB-Reg.woff2") format("woff2"), url("/fonts/BerlinSansFB-Reg.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
 body {
   background-color: #014048;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 50px);
+  width: 70%;
+}
+
+.top {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .logo {
   font-family: "Berlin Sans FB";
   font-size: 60px;
+}
+.logo a {
+  text-decoration: none;
   color: #eee3e3;
 }
 .logo span:nth-child(1) {
@@ -169,6 +204,185 @@ body {
   width: 75px;
   height: 70px;
   content: "";
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: "Berlin Sans FB";
+  font-size: 18px;
+}
+nav a {
+  color: #eee3e3;
+  text-decoration: none;
+  padding-bottom: 20px;
+}
+nav a:hover {
+  color: #c7f694;
+}
+nav ul {
+  display: flex;
+}
+nav ul li {
+  padding-left: 30px;
+  padding-right: 25px;
+}
+nav .form {
+  position: relative;
+}
+nav .form__search {
+  border: none;
+  background-color: #02343b;
+  border-radius: 7px 0px 0px 7px;
+  height: 35px;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 60px;
+  font-family: "Berlin Sans FB";
+  font-size: 18px;
+  outline: none;
+  color: white;
+}
+nav .form__spin {
+  position: absolute;
+  right: -10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  border: none;
+  font-family: "Berlin Sans FB";
+  color: white;
+  background-color: #f67d7e;
+  cursor: pointer;
+  transform: rotate(-20deg);
+  transition: transform 0.3s ease-in-out;
+}
+nav .form__spin:hover {
+  transform: rotate(360deg);
+}
+
+.middle {
+  font-family: "Berlin Sans FB";
+  color: #eee3e3;
+}
+.middle .tiles {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 150px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.middle .tiles .tile {
+  flex: 1 1 300px;
+  align-self: flex-start;
+  padding: 30px;
+  cursor: pointer;
+  background-color: #02343b;
+  border-radius: 15px;
+}
+.middle .tiles .tile:hover {
+  background-color: #4cbfcf;
+}
+.middle .tiles .tile .lpholder .imgholder {
+  margin-bottom: 20px;
+  z-index: 1;
+}
+.middle .tiles .tile .lpholder .imgholder img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.middle .tiles .tile p {
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.genre_links {
+  font-family: "Berlin Sans FB";
+  font-size: 14px;
+  color: #eee3e3;
+  margin-bottom: 50px;
+  width: 85%;
+}
+.genre_links ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.genre_links ul li {
+  padding: 10px 20px 10px 20px;
+  border: 1px solid #eee3e3;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.genre_links ul li:hover {
+  color: #c7f694;
+  border-color: #c7f694;
+}
+
+footer {
+  background-color: #f67d7e;
+  height: 50px;
+  width: 100%;
+  position: relative;
+}
+footer .container {
+  font-family: "Berlin Sans FB";
+  font-size: 11px;
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 70%;
+  padding-top: 20px;
+}
+footer .elements {
+  position: absolute;
+  bottom: 20px;
+  right: 0px;
+}
+footer .elements .circle {
+  width: 170px;
+  height: 170px;
+  background-image: url(/css/images/lp_element.png);
+  background-size: 170px 170px;
+  background-repeat: no-repeat;
+}
+footer .elements .circle2 {
+  position: absolute;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  background-color: #02343b;
+  bottom: -20px;
+  left: -100px;
+  z-index: -2;
+}
+footer .elements .block {
+  position: absolute;
+  width: 90px;
+  height: 10px;
+  background-color: #4cbfcf;
+  bottom: 40px;
+  left: -130px;
+}
+footer .elements .block1 {
+  position: absolute;
+  width: 90px;
+  height: 10px;
+  background-color: #4cbfcf;
+  bottom: 60px;
+  left: -150px;
+}
+footer .elements .block2 {
+  position: absolute;
+  width: 90px;
+  height: 10px;
+  background-color: #4cbfcf;
+  bottom: 80px;
+  left: -130px;
 }
 
 /*# sourceMappingURL=style.css.map */
